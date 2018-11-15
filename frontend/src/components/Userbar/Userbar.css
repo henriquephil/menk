@@ -1,0 +1,13 @@
+.Userbar {
+  position: fixed;
+  line-height: 40px;
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 12pt;
+  color: white;
+}
+.Company {
+
+}

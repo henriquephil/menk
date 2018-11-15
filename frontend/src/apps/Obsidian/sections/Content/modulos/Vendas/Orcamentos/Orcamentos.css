@@ -1,0 +1,14 @@
+.List {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.Pagetable {
+    width: 900px;
+}
+.Options {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+}

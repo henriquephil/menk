@@ -1,0 +1,27 @@
+.Pagetable {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.Table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.Table thead {
+    font-weight: 700;
+    color: #666;
+    border-bottom: 2px solid #aaa;
+    height: 36px;
+}
+.Table tbody tr {
+    border-top: 1px solid #bbb;
+    height: 28px;
+}
+.Table td {
+    text-align: left;
+    padding-left: 0.2vw;
+    padding-right: 0.2vw;
+}
+.Options {
+    width: 300px;
+}
