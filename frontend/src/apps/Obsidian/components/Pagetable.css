@@ -1,0 +1,84 @@
+.Pagetable {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.Pagetable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.Pagetable table tbody td {
+    text-align: left;
+    padding-left: 0.2vw;
+    padding-right: 0.2vw;
+}
+.Pagetable table thead {
+    font-weight: 700;
+    color: #808080;
+    border-bottom: 2px solid #dfdfdf;
+    height: 48px;
+}
+
+.Pagetable table tbody {
+    color: #505050;
+}
+.Pagetable table tbody tr {
+    border-bottom: 1px solid #e6e6e6;
+    height: 32px;
+}
+.Pagetable table tbody tr:hover {
+    color: black;
+    background-color: #fff;
+}
+
+.Pagetable--tableActions {
+    position: fixed;
+    line-height: 30px;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    transform: translateX(-100%);
+}
+.Pagetable--tableActions > * {
+    height: 18px;
+    margin: 6px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.2s;
+}
+.Pagetable table > tbody > tr:hover > .Pagetable--tableActions > * {
+    opacity: 0.4;
+}
+.Pagetable table > tbody > tr:hover > .Pagetable--tableActions > *:hover {
+    opacity: 0.8;
+}
+
+.Pagetable tfoot td {
+    padding: 0;
+}
+.Pagetable--footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+}
+.Pagetable--footer input[type=button] {
+    height: 100%;
+    background: transparent;
+    border: 1px solid #e6e6e6;
+    color: #666;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.Pagetable--footer input[type=button]:hover {
+    background: white;
+    color: #333;
+    border-color: #d6d6d6;
+}
+.Pagetable--footer input[type=button]:first-child {
+    border-width: 0 1px 0 0;
+}
+.Pagetable--footer input[type=button]:last-child {
+    border-width: 0 0 0 1px;
+}

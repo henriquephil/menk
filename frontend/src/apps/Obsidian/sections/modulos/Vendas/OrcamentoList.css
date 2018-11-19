@@ -1,14 +1,19 @@
-.List {
+.Form {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
-.Pagetable {
+.Tablespace {
     width: 900px;
+    border-right: 1px solid #dfdfdf;
 }
 .Options {
     width: 300px;
     display: flex;
     flex-direction: column;
     align-content: flex-end;
+}
+.OptionsSearch {
+    height: 48px;
+    border-bottom: 2px solid #dfdfdf;
 }

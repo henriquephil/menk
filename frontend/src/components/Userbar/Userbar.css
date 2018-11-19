@@ -1,13 +1,16 @@
-.Userbar {
-  position: fixed;
-  line-height: 40px;
-  width: 1200px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 12pt;
-  color: white;
-}
 .Company {
-
+    position: fixed;
+    left: 0;
+    line-height: 50px;
+    font-size: 12pt;
+    color: #ada7a2;
+    padding-left: 16px
+}
+.User {
+    position: fixed;
+    right: 0;
+    line-height: 50px;
+    font-size: 12pt;
+    color: #ada7a2;
+    padding-right: 16px
 }

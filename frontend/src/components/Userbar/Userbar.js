@@ -4,7 +4,7 @@ import './Userbar.css';
 class Userbar extends Component {
     render() {
       return (
-        <div className="Userbar">
+        <div>
           <div className="Company">Company</div>
           <div className="User">User</div>
         </div>

@@ -1,13 +1,14 @@
 //import Api from "./Api";
 
 class OrcamentoService {
-    fetchAll() {
+    fetchPage(page, size) {
         //return Api.get('/orcamento');
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const result = {
-                    page: 1,
                     pages: 42,
+                    index: page,
+                    size: size,
                     data :[
                         {id: 1, descricao: "Aasdasds"},
                         {id: 2, descricao: "B12wqewq"},
@@ -29,11 +30,24 @@ class OrcamentoService {
                         {id: 18, descricao: "Rgasvadvdsaar4"},
                         {id: 19, descricao: "Sfet4hsfdgs"},
                         {id: 20, descricao: "Ta3tghjtuj"}
-                    ],
-                    size: 20
+                    ]
                 }
                 resolve({
                     data: result
+                });
+            }, 1000);
+        });
+    }
+
+    get(id) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({
+                    data: {
+                        id: id,
+                        cliente: {},
+                        itens: []
+                    }
                 });
             }, 1000);
         });

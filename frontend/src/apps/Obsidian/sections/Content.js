@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 import './Content.css';
-import Container from '../../../../components/Container/Container';
-import Compras from './modulos/Compras/Compras';
-import Vendas from './modulos/Vendas/Vendas';
-import Home from './modulos/Home/Home';
+import Container from '../../../components/Container/Container';
+import Compras from './modulos/Compras';
+import Vendas from './modulos/Vendas';
+import Home from './modulos/Home';
 
 class Content extends Component {
     render() {

@@ -1,0 +1,6 @@
+.OrcamentoForm--section {
+    padding: 16px;
+}
+.OrcamentoForm--section:not(:last-child) {
+    border-bottom: 1px solid #cfcfcf;
+}
