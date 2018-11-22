@@ -1,0 +1,19 @@
+.GenericPageableList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.GenericPageableList--table {
+    width: 900px;
+    border-right: 1px solid #dfdfdf;
+}
+.GenericPageableList--side {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+}
+.GenericPageableList--search {
+    height: 48px;
+    border-bottom: 2px solid #dfdfdf;
+}

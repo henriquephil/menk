@@ -8,3 +8,17 @@
     box-shadow: 0 0 4px black inset;
     padding: 8px 0;
 }
+.Content--ct-exit {
+    display: none;
+}
+.Content--ct-enter {
+    opacity: 0;
+    transform: scale(1.02);
+    filter: blur(8px);
+}
+.Content--ct-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.6s;
+    filter: blur(0);
+}

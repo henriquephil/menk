@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Forum');
+
 .Footer {
     width: 100%;
+}
+.Footer--obsidian {
+    font-family: 'Forum', cursive;
+    font-size: 18pt;
+    color: #aaa;
+}
+.Footer--obsidian-o {
+    font-family: 'Forum', cursive;
+    font-size: 32pt;
+    color: #aaa;
 }

@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    font-weight: 700;
+    color: #808080;
+    border-bottom: 2px solid #dfdfdf;
+    height: 48px;
+}
+
+table tbody {
+    color: #505050;
+}
+table tbody td {
+    text-align: left;
+    padding-left: 0.2vw;
+    padding-right: 0.2vw;
+}
+table tbody tr {
+    border-bottom: 1px solid #e6e6e6;
+    height: 32px;
+}
+table tbody tr:hover {
+    color: black;
+    background-color: #fff;
+}

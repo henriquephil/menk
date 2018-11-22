@@ -20,7 +20,7 @@ class Pagetable extends Component {
                         <tr>
                             <td colSpan={this.props.children.length}>
                                 <div className="Pagetable--footer">
-                                    <input type="button" value="Próxima página" onClick={this.props.controls.previousPage} className=""/>
+                                    <input type="button" value="Página anterior" onClick={this.props.controls.previousPage}/>
                                     <input type="button" value="Próxima página" onClick={this.props.controls.nextPage}/>
                                 </div>
                             </td>

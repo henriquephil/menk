@@ -1,0 +1,6 @@
+.obsidian-form .of-section {
+    padding: 16px;
+}
+.obsidian-form .of-section:not(:last-child) {
+    border-bottom: 1px solid #cfcfcf;
+}

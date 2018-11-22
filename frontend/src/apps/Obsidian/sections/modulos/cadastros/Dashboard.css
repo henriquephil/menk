@@ -1,0 +1,6 @@
+.Dashboard {
+    display: flex;
+}
+.Dashboard--column {
+    padding: 0 4px;
+}
