@@ -1,13 +1,31 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './Dashboard.css';
+import GenericDashboard from '../../../components/GenericDashboard';
+import PaperSection from '../../../components/PaperSection';
 
 class Dashboard extends Component {
     render() {
-      return (
-        <div className="Dashboard">
-            <Link to="/vendas/orcamentos" className="default">Orçamentos</Link>
-        </div>
+        const menuItens = [
+            {to:'/vendas/orcamentos', name: 'Orçamentos'},
+            {to:'/vendas', name: 'Vendas'},
+            {to:'/vendas', name: 'Notas fiscais'}
+        ];
+        const reportItens = [
+            {to:'/vendas', name: 'Faturamento'},
+            {to:'/vendas', name: 'Relatório de vendas'},
+            {to:'/vendas', name: 'Relatório de notas fiscais'}
+        ];
+        return (
+            <GenericDashboard menuItens={menuItens} reportItens={reportItens}>
+                <PaperSection>
+                    Dashboard 1
+                </PaperSection>
+                <PaperSection>
+                    Dashboard 2
+                </PaperSection>
+                <PaperSection>
+                    Dashboard 3
+                </PaperSection>
+            </GenericDashboard>
       );
     }
   }

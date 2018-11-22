@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './Dashboard.css';
-import FlexView from 'react-flexview/lib';
+import PaperSection from '../../../components/PaperSection';
+import GenericDashboard from '../../../components/GenericDashboard';
 
 class Dashboard extends Component {
     render() {
-      return (
-        <div className="Dashboard">
-            <FlexView grow>
-                <FlexView basis="25%" column hAlignContent='left' className="Dashboard--column">
-                    <Link to="/cadastros/clientes" className="menu-item">Clientes</Link>
-                    <Link to="/cadastros/clientes" className="menu-item">Produtos</Link>
-                    <Link to="/cadastros/clientes" className="menu-item">Fornecedores</Link>
-                    <Link to="/cadastros/clientes" className="menu-item">Formas de pagamentos</Link>
-                    <Link to="/cadastros/clientes" className="menu-item">Conta bancária</Link>
-                </FlexView>
-                <FlexView basis="50%" column hAlignContent='center' className="Dashboard--column">
-                    Dashboard
-                    <Link to="/cadastros/clientes" className="menu-item">Conta bancária</Link>
-                </FlexView>
-                <FlexView basis="25%" column hAlignContent='right' className="Dashboard--column">
-                    Relatórios
-                    <Link to="/cadastros/clientes" className="menu-item">Conta bancária</Link>
-                </FlexView>
-            </FlexView>
-        </div>
+        const menuItens = [
+            {to:'/cadastros/clientes', name: 'Clientes'},
+            {to:'/cadastros', name: 'Produtos'},
+            {to:'/cadastros', name: 'Fornecedores'},
+            {to:'/cadastros', name: 'Formas de pagamentos'},
+            {to:'/cadastros', name: 'Conta bancária'}
+        ];
+        const reportItens = [
+            {to:'/cadastros', name: 'Relatório de clientes'},
+            {to:'/cadastros', name: 'Relatório de fornecedores'}
+        ];
+        return (
+            <GenericDashboard menuItens={menuItens} reportItens={reportItens}>
+                <PaperSection>
+                    Dashboard 1
+                </PaperSection>
+                <PaperSection>
+                    Dashboard 2
+                </PaperSection>
+                <PaperSection>
+                    Dashboard 3
+                </PaperSection>
+            </GenericDashboard>
       );
     }
   }
