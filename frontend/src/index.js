@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/table.css';
-import './styles/forms.css';
 import './styles/inputs.css';
 import './styles/links.css';
 import App from './App';

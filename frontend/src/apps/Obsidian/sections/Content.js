@@ -14,7 +14,7 @@ class Content extends Component {
         <div className="Content">
             <Container>
                 <TransitionGroup className="full-width">
-                    <CSSTransition key={this.props.location.key} classNames="Content--ct" timeout={600}>
+                    <CSSTransition key={this.props.location.key} classNames="Content--ct" timeout={400}>
                         <Switch location={this.props.location}>
                             <Route path="/cadastros" component={Cadastros}/>
                             <Route path="/compras" component={Compras}/>

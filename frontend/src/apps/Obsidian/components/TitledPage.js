@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './TitledPage.css';
+import Paper from './Paper';
 
 class TitledPage extends Component {
 
@@ -9,9 +10,9 @@ class TitledPage extends Component {
                 <div className="TitledPage--title">
                     {this.props.title}
                 </div>
-                <div className="TitledPage--children">
+                <Paper>
                     {this.props.children}
-                </div>
+                </Paper>
             </div>
         );
     }

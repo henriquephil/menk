@@ -1,0 +1,6 @@
+.PaperSection {
+    padding: 16px;
+}
+.PaperSection:not(:last-child) {
+    border-bottom: 1px solid #cfcfcf;
+}
