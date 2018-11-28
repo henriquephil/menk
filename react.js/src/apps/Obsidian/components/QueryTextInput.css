@@ -1,24 +1,26 @@
 .QueryTextInput {
     width: 100%;
 }
-.QueryTextInput input {
-    width: 120px;
-    border-radius: 4px 0 0 4px;
+.QueryTextInput--id {
+    width: 100px;
+    border-radius: 4px 0 0 4px !important;
 }
 .QueryTextInput button {
     background: #e8e8e8;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
+    z-index: 2;
 }
 .QueryTextInput button:hover {
-    background: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
-.QueryTextInput span {
+.QueryTextInput--description {
     padding: 4px;
     color: #777;
     background: #e8e8e8;
     padding: 8px;
     width: 100%;
     text-align: left;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0 !important;
 }

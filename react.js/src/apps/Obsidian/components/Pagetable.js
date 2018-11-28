@@ -48,7 +48,7 @@ class Pagetable extends Component {
     }
 
     renderNoData() {
-        return <tr><td colSpan={this.props.children.length}>Nada disponível</td></tr>;
+        return <tr><td colSpan={this.props.children.length} style={{textAlign: 'center'}}>Loading</td></tr>;
     }
 
     tdStyle(thStyle) {

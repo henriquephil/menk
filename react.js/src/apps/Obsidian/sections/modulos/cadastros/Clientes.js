@@ -15,7 +15,7 @@ class Clientes extends Component {
             {
                 key: 'id',
                 descricao: 'ID',
-                width: '150px',
+                width: '100px',
                 align: 'right'
             },
             {

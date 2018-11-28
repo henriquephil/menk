@@ -1,0 +1,19 @@
+{
+  "name": "obsidian-backend",
+  "version": "1.0.0",
+  "description": "Obsidian Node.js backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Henrique Philippi",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-oauth-server": "^2.0.0",
+    "mongoose": "^5.3.14"
+  }
+}

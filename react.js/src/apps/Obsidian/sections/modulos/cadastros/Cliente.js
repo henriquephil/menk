@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import FlexView from 'react-flexview';
-import OrcamentoService from '../../../services/OrcamentoService';
 import TitledPage from '../../../components/TitledPage';
 import PaperSection from '../../../components/PaperSection';
+import ClienteService from '../../../services/ClienteService';
 
 class Cliente extends Component {
     
     constructor(props) {
         super(props);
-        this.orcamentoService = new OrcamentoService()
+        this.clienteService = new ClienteService()
         this.state = {
-            orcamento: {
-                cliente: {}
-            }
+            cliente: {}
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -32,6 +30,10 @@ class Cliente extends Component {
             this.setState(change);
             console.log(this.state);
         };
+    }
+
+    salvar() {
+        this.clienteService.post(this.state.cliente);
     }
 
     render() {
@@ -55,7 +57,7 @@ class Cliente extends Component {
                             </select>
                         </FlexView>
                         <FlexView grow />
-                        <FlexView basis={120} column hAlignContent='left' className="form-input">
+                        <FlexView basis={100} column hAlignContent='left' className="form-input">
                             <label>ID</label>
                             <input type="text" readOnly/>
                         </FlexView>

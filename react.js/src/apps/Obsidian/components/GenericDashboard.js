@@ -9,7 +9,7 @@ class GenericDashboard extends Component {
       return (
         <FlexView grow>
             <FlexView basis="25%" column hAlignContent='left' className="GenericDashboard--column">
-                {this.props.menuItens.map(item => <Link to={item.to} className="menu-item">{item.name}</Link>)}
+                {this.props.menuItens.map(item => <Link key={item.to} to={item.to} className="menu-item">{item.name}</Link>)}
             </FlexView>
             <FlexView basis="50%" column hAlignContent='center' className="GenericDashboard--column">
                 <Paper>
