@@ -9,7 +9,7 @@ a.default, button.default {
     font-weight: 600;
     min-width: 120px;
     border: none;
-    border-radius: 2px;
+    border-radius: 1px;
     padding: 8px;
     margin: 4px;
     transition: 0.4s;
@@ -34,7 +34,7 @@ a.danger:hover, button.danger:hover {
     width: 100%;
     text-align: left;
     line-height: 30px;
-    border-radius: 2px;
+    border-radius: 1px;
     padding: 12px 8px;
     transition: 0.4s;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
@@ -48,14 +48,14 @@ a.danger:hover, button.danger:hover {
     color: #666;
     font-weight: 600;
     width: 100%;
-    text-align: right;
+    text-align: left;
     line-height: 24px;
-    border-radius: 2px;
+    border-radius: 1px;
     padding: 4px 8px;
     transition: 0.4s;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 .report-item:hover {
     color: #600;
-    background: #f9f9f9;
+    background: rgba(0, 0, 0, 0.1);
 }

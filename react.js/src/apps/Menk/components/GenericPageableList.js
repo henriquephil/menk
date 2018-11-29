@@ -42,7 +42,7 @@ class GenericPageableList extends Component {
         this.setState({page: {}});
         this.service.fetchPage(page, size).then(res => {
             console.info(res.data);
-            this.setState({page: res.data});
+            this.setState({page: {data: res.data}});
         });
     }
 

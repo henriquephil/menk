@@ -16,8 +16,8 @@ class GenericDashboard extends Component {
                     {this.props.children}
                 </Paper>
             </FlexView>
-            <FlexView basis="25%" column hAlignContent='right' className="GenericDashboard--column">
-                {this.props.reportItens.map(item => <Link to={item.to} className="report-item">{item.name}</Link>)}
+            <FlexView basis="25%" column hAlignContent='left' className="GenericDashboard--column">
+                {this.props.reportItens.map(item => <Link key={item.to} to={item.to} className="report-item">{item.name}</Link>)}
             </FlexView>
         </FlexView>
       );

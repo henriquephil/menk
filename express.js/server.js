@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/obsidiandb'); 
+mongoose.connect('mongodb://localhost/menkdb'); 
 
 app.oauth = new OAuthServer({
     model: {}, // See https://github.com/oauthjs/node-oauth2-server for specification

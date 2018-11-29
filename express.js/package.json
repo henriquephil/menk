@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-backend",
+  "name": "menk-backend",
   "version": "1.0.0",
-  "description": "Obsidian Node.js backend",
+  "description": "Menk Express.js backend",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"

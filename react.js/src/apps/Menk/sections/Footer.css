@@ -4,13 +4,12 @@
 .Footer {
     width: 100%;
 }
-.Footer--obsidian {
+.Footer--text {
     font-family: 'Lobster', 'Forum', cursive;
     font-size: 18pt;
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: default;
 }
-.Footer--obsidian-o {
-    font-family: 'Lobster', 'Forum', cursive;
+.Footer--capital {
     font-size: 32pt;
-    color: #aaa;
 }

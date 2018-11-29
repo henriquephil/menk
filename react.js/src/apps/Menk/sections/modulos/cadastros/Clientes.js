@@ -13,7 +13,7 @@ class Clientes extends Component {
         this.clienteService = new ClienteService();
         this.headers = [
             {
-                key: 'id',
+                key: '_id',
                 descricao: 'ID',
                 width: '100px',
                 align: 'right'

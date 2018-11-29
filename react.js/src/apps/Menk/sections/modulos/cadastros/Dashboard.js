@@ -6,14 +6,14 @@ class Dashboard extends Component {
     render() {
         const menuItens = [
             {to:'/cadastros/clientes', name: 'Clientes'},
-            {to:'/cadastros', name: 'Produtos'},
-            {to:'/cadastros', name: 'Fornecedores'},
-            {to:'/cadastros', name: 'Formas de pagamentos'},
-            {to:'/cadastros', name: 'Conta bancária'}
+            {to:'/produtos', name: 'Produtos'},
+            {to:'/fornecedores', name: 'Fornecedores'},
+            {to:'/formas-pagamento', name: 'Formas de pagamentos'},
+            {to:'/conta-bancaria', name: 'Conta bancária'}
         ];
         const reportItens = [
-            {to:'/cadastros', name: 'Relatório de clientes'},
-            {to:'/cadastros', name: 'Relatório de fornecedores'}
+            {to:'/relatorio-cliente', name: 'Relatório de clientes'},
+            {to:'/relatorio-fornecedores', name: 'Relatório de fornecedores'}
         ];
         return (
             <GenericDashboard menuItens={menuItens} reportItens={reportItens}>

@@ -5,8 +5,8 @@ class Footer extends Component {
     render() {
       return (
         <div className="Footer">
-            <span className="Footer--obsidian-o">O</span>
-            <span className="Footer--obsidian">bsidian</span>
+            <span className="Footer--text Footer--capital">M</span>
+            <span className="Footer--text">enk</span>
         </div>
       );
     }

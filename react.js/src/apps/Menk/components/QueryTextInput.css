@@ -3,7 +3,7 @@
 }
 .QueryTextInput--id {
     width: 100px;
-    border-radius: 4px 0 0 4px !important;
+    border-radius: 2px 0 0 4px !important;
 }
 .QueryTextInput button {
     background: #e8e8e8;
@@ -22,5 +22,5 @@
     padding: 8px;
     width: 100%;
     text-align: left;
-    border-radius: 0 4px 4px 0 !important;
+    border-radius: 0 2px 4px 0 !important;
 }
