@@ -56,7 +56,7 @@ class Orcamentos extends Component {
         return (
             <TitledPage title="Orçamentos">
                 <GenericPageableList service={this.orcamentoService} recordActions={this.recordActions} headers={this.headers}>
-                    <Link to="/vendas/orcamento/novo" className="default primary">Novo</Link>
+                    <Link to="/vendas/orcamento" className="default primary">Novo</Link>
                 </GenericPageableList>
             </TitledPage>
         );

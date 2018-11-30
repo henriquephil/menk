@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import FlexView from 'react-flexview';
 import TitledPage from '../../../components/TitledPage';
 import PaperSection from '../../../components/PaperSection';
-import ClienteService from '../../../services/ClienteService';
+import GenericCrudService from '../../../services/GenericCrudService';
 import DateInput from '../../../components/DateInput';
 
 class Cliente extends Component {
     
     constructor(props) {
         super(props);
-        this.clienteService = new ClienteService()
+        this.clienteService = new GenericCrudService('/cliente');
         this.state = {
-            id: '',
+            _id: '',
             nome: '',
             dataNascimento: '   ',
             sexo: ''
@@ -21,12 +21,13 @@ class Cliente extends Component {
     }
 
     componentDidMount() {
-        const id = +this.props.match.params.id;
-        if(!isNaN(id)) {
+        const id = this.props.match.params.id;
+        if(id) {
             this.clienteService.get(id).then(res => {
                 const cliente = res.data;
+                console.log(cliente);
                 this.setState({
-                    id: cliente.id,
+                    _id: cliente._id,
                     nome: cliente.nome,
                     dataNascimento: cliente.dataNascimento,
                     sexo: cliente.sexo
@@ -44,7 +45,6 @@ class Cliente extends Component {
     }
 
     salvar() {
-        console.log(this.state);
         if (this.state.id) {
             this.clienteService.put(this.state.id, this.state).then(console.log);
         } else {
@@ -54,10 +54,10 @@ class Cliente extends Component {
 
     render() {
         return (
-            <TitledPage title={this.props.match.params.id === 'novo' ? "Novo cliente" : "Editando cliente"}>
+            <TitledPage title={this.props.match.params.id ? "Editando cliente" : "Novo cliente"}>
                 <PaperSection>
                     <FlexView grow>
-                        <FlexView basis={500} column hAlignContent='left' className="form-input">
+                        <FlexView grow column hAlignContent='left' className="form-input">
                             <label>Nome</label>
                             <input type="text" value={this.state.nome} onChange={this.handleChange('nome')}/>
                         </FlexView>
@@ -72,11 +72,6 @@ class Cliente extends Component {
                                 <option value="MASCULINO">Masculino</option>
                                 <option value="FEMININO">Feminino</option>
                             </select>
-                        </FlexView>
-                        <FlexView grow />
-                        <FlexView basis={100} column hAlignContent='left' className="form-input">
-                            <label>ID</label>
-                            <input type="text" value={this.state.id} onChange={this.handleChange('id')} readOnly/>
                         </FlexView>
                     </FlexView>
                 </PaperSection>

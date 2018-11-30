@@ -25,6 +25,10 @@
 .Pagetable table > tbody > tr:hover > .Pagetable--tableActions > *:hover {
     opacity: 0.8;
 }
+.Pagetable th, .Pagetable td {
+    padding-left: 8px;
+    padding-right: 8px;
+}
 
 .Pagetable--footer {
     display: flex;

@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var ClienteSchema = new Schema({
+module.exports = mongoose.model('Cliente', new Schema({
     ativo: {
         type: Boolean,
         default: true
@@ -23,6 +23,4 @@ var ClienteSchema = new Schema({
         type: Date,
         default: Date.now
     }
-});
-
-module.exports = mongoose.model('Cliente', ClienteSchema);
+}));

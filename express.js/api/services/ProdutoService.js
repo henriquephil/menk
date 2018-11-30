@@ -1,55 +1,55 @@
 'use strict';
 var mongoose = require('mongoose');
-var Cliente = mongoose.model('Cliente');
+var Produto = mongoose.model('Produto');
 
 exports.insert = (req, res) => {
-    (new Cliente(req.body)).save((err, cliente) => {
+    (new Cliente(req.body)).save((err, produto) => {
         if (err)
             res.status(400).send(err);
-        res.json(cliente);
+        res.json(produto);
     });
 };
 
 exports.findAll = (req, res) => {
-    Cliente.find({}, (err, cliente) => {
+    Produto.find({}, (err, produto) => {
         if (err)
             res.status(400).send(err);
-        res.json(cliente);
+        res.json(produto);
     });
 };
 
 exports.findById = (req, res) => {
-    Cliente.findById(req.params.id, (err, cliente) => {
+    Produto.findById(req.params.id, (err, produto) => {
         if (err)
             res.status(400).send(err);
-        res.json(cliente);
+        res.json(produto);
     });
 };
 
 exports.update = (req, res) => {
-    Cliente.findOneAndUpdate({
+    Produto.findOneAndUpdate({
         _id: req.params.id
     }, req.body, {
         new: true
-    }, (err, cliente) => {
+    }, (err, produto) => {
         if (err)
             res.status(400).send(err);
-        res.json(cliente);
+        res.json(produto);
     });
 };
 
 exports.delete = (req, res) => {
-    Cliente.findOneAndUpdate({
+    Produto.findOneAndUpdate({
         _id: req.params.id
     }, {
         ativo: false
     }, {
         new: true
-    }, (err, cliente) => {
+    }, (err, produto) => {
         if (err)
             res.status(400).send(err);
         res.json({
-            message: 'Cliente inativado'
+            message: 'Produto inativado'
         });
     });
 };

@@ -37,7 +37,7 @@ class OrcamentoForm extends Component {
 
     render() {
         return (
-            <TitledPage title={this.props.match.params.id === 'novo' ? "Novo orçamento" : "Editando orçamento"}>
+            <TitledPage title={this.props.match.params.id ? "Editando orçamento" : "Novo orçamento"}>
                 <PaperSection>
                     <FlexView grow>
                         <FlexView basis='500' column hAlignContent='left' className="form-input">

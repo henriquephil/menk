@@ -4,6 +4,7 @@ import './Cadastros.css'
 import Dashboard from './cadastros/Dashboard';
 import Clientes from './cadastros/Clientes';
 import Cliente from './cadastros/Cliente';
+import Produtos from './cadastros/Produtos';
 
 class Cadastros extends Component {
     render() {
@@ -11,7 +12,8 @@ class Cadastros extends Component {
         <div className="Cadastros">
             <Switch>
                 <Route path={`${this.props.match.path}/clientes`} component={Clientes}/>
-                <Route path={`${this.props.match.path}/cliente/:id`} component={Cliente}/>
+                <Route path={`${this.props.match.path}/cliente/:id?`} component={Cliente}/>
+                <Route path={`${this.props.match.path}/produtos`} component={Produtos}/>
                 <Route path={`${this.props.match.path}`} component={Dashboard}/>
                 <Redirect to={`${this.props.match.path}`}/>
             </Switch>

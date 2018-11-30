@@ -36,7 +36,7 @@ class Pagetable extends Component {
             return this.renderNoData();
         }
         const dataRows = page.data.map(record => this.renderRow(record, this.props.children));
-        const emptyRows = [...Array(this.props.pageSize - page.data.length)].map(i => <tr key={i}><td colSpan={this.props.children.length}></td></tr>);
+        const emptyRows = [...Array(this.props.pageSize - page.data.length)].map((val, i) => <tr key={i}><td colSpan={this.props.children.length}></td></tr>);
         return [dataRows, emptyRows];
     }
 

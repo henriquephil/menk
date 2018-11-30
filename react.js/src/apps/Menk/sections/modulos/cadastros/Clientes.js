@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import ClienteService from '../../../services/ClienteService';
+import GenericCrudService from '../../../services/GenericCrudService';
 import TitledPage from '../../../components/TitledPage';
 import GenericPageableList from '../../../components/GenericPageableList';
 import pencil from 'resources/pencil.svg'
@@ -9,15 +9,9 @@ class Clientes extends Component {
     
     constructor(props) {
         super(props);
-        this.editCliente = this.editCliente.bind(this);
-        this.clienteService = new ClienteService();
+        this.edit = this.edit.bind(this);
+        this.clienteService = new GenericCrudService('/cliente');
         this.headers = [
-            {
-                key: '_id',
-                descricao: 'ID',
-                width: '100px',
-                align: 'right'
-            },
             {
                 key: 'nome',
                 descricao: 'Nome',
@@ -28,20 +22,21 @@ class Clientes extends Component {
             {
                 srcImg: pencil,
                 alt: 'Editar',
-                onClick: this.editCliente
+                onClick: this.edit
             }
         ]
     }
 
-    editCliente(cliente) {
-        this.props.history.push(`/cadastros/cliente/${cliente.id}`)
+    edit(cliente) {
+        console.log(cliente);
+        this.props.history.push(`/cadastros/cliente/${cliente._id}`)
     }
 
     render() {
         return (
             <TitledPage title="Clientes">
                 <GenericPageableList service={this.clienteService} recordActions={this.recordActions} headers={this.headers}>
-                    <Link to="/cadastros/cliente/novo" className="default primary">Novo</Link>
+                    <Link to="/cadastros/cliente" className="default primary">Novo</Link>
                 </GenericPageableList>
             </TitledPage>
         );

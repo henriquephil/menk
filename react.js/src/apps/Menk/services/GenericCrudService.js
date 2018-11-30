@@ -1,7 +1,10 @@
 import Api from "./Api";
 
-class ClienteService {
-    baseUrl = '/cliente';
+class GenericCrudService {
+
+    constructor(baseUrl) {
+        this.baseUrl = baseUrl;
+    }
 
     fetchPage({page, size}) {
         return Api.get(this.baseUrl, {params: {size: size, page: page}});
@@ -19,4 +22,4 @@ class ClienteService {
         return Api.get(`${this.baseUrl}/${id}`)
     }
 }
-export default ClienteService;
+export default GenericCrudService;

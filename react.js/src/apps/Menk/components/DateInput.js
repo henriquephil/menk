@@ -11,13 +11,11 @@ class DateInput extends Component {
     }
 
     handleDayChange(date) {
-        console.log(date);
-        const e = {
+        this.props.onChange({
             target: {
                 value: date
             }
-        }
-        this.props.onChange(e);
+        });
     }
 
     render() {

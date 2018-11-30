@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function(app) {
+module.exports = app => {
   var clienteService = require('../services/ClienteService');
 
   app.route('/cliente')
