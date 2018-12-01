@@ -6,7 +6,12 @@ class PaperSection extends Component {
     render() {
         return (
             <div className="PaperSection">
-                {this.props.children}
+                <div className="PaperSection--title">
+                    {this.props.title}
+                </div>
+                <div>
+                    {this.props.children}
+                </div>
             </div>
         );
     }

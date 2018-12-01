@@ -1,6 +1,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
+    color: #505050;
 }
 
 table thead {
@@ -10,17 +11,18 @@ table thead {
     height: 48px;
 }
 
-table tbody {
-    color: #505050;
-}
 table tbody td {
     text-align: left;
-    padding-left: 0.2vw;
-    padding-right: 0.2vw;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+table tfoot {
+    border-top: 2px solid #dfdfdf;
 }
 table tbody tr {
-    border-bottom: 1px solid #e6e6e6;
     height: 32px;
+    border-bottom: 1px solid #e6e6e6;
 }
 table tbody tr:hover {
     color: black;

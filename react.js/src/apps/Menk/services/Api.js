@@ -41,10 +41,16 @@ function convertDateStringsToDates(input) {
     return null;
 }
 
-export default Axios.create({
+const axios = Axios.create({
     baseURL: process.env.REACT_APP_BACKEND,
     transformResponse: Axios.defaults.transformResponse.concat((data) => {
         convertDateStringsToDates(data);
         return data;
     })
 });
+const errorInterceptor = error => {
+    // TODO notify snackbar
+    console.log(error.response.data.message); 
+};
+axios.interceptors.response.use(null, errorInterceptor)
+export default axios;

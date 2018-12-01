@@ -4,3 +4,10 @@
 .PaperSection:not(:last-child) {
     border-bottom: 1px solid #cfcfcf;
 }
+.PaperSection--title {
+    font-size: 1.1rem;
+    color: #737373;
+    text-align: left;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    transform: translateY(-6px);
+}

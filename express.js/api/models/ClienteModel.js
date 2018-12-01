@@ -7,19 +7,26 @@ module.exports = mongoose.model('Cliente', new Schema({
         type: Boolean,
         default: true
     },
-    nome: {
-        type: String,
-        required: 'Nome não informado'
+    nome: String,
+    tipo: String,
+    fisica: {
+        cpf: String,
+        dataNascimento: Date,
+        sexo: String
     },
-    dataNascimento: {
-        type: Date,
-        required: 'Data de nascimento não informado'
+    juridica: {
+        cnpj: String,
+        inscricaoEstadual: String
     },
-    sexo: {
-        type: String,
-        required: 'Sexo não informado'
+    endereco: {
+        pais: String,
+        estado: String,
+        cidade: String,
+        cep: String,
+        bairro: String,
+        endereco: String
     },
-    created_at: {
+    createdAt: {
         type: Date,
         default: Date.now
     }

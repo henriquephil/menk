@@ -11,7 +11,7 @@ module.exports = mongoose.model('Produto', new Schema({
         data: Date
     }],
     ncm: String,
-    created_at: {
+    createdAt: {
         type: Date,
         default: Date.now
     }

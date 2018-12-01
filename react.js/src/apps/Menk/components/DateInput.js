@@ -19,7 +19,7 @@ class DateInput extends Component {
     }
 
     render() {
-      return <DayPickerInput value={this.props.value} formatDate={formatDate} parseDate={parseDate} onDayChange={this.handleDayChange} format="D/M/YYYY"/>;
+      return <DayPickerInput value={this.props.value} formatDate={formatDate} parseDate={parseDate} onDayChange={this.handleDayChange} format="DD/MM/YYYY" placeholder="DD/MM/AAAA"/>;
     }
 }
 

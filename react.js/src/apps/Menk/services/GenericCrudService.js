@@ -14,6 +14,14 @@ class GenericCrudService {
         return Api.post(this.baseUrl, body);
     }
 
+    save(body) {
+        if (body._id) {
+            return this.put(body._id, body);
+        } else {
+            return this.post(body);
+        }
+    }
+
     put(id, body) {
         return Api.put(`${this.baseUrl}/${id}`, body);
     }

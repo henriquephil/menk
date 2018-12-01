@@ -29,6 +29,11 @@
     padding-left: 8px;
     padding-right: 8px;
 }
+.Pagetable--empty-row, .Pagetable--empty-row:hover {
+    color: transparent;
+    background-color: transparent;
+    border-color: transparent;
+}
 
 .Pagetable--footer {
     display: flex;
