@@ -3,13 +3,22 @@
 
 .Footer {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.3);
 }
-.Footer--text {
+.Footer--title {
     font-family: 'Lobster', 'Forum', cursive;
     font-size: 18pt;
-    color: rgba(255, 255, 255, 0.3);
     cursor: default;
 }
 .Footer--capital {
     font-size: 32pt;
+}
+.Footer--link, .Footer--link:visited {
+    color: rgba(255, 255, 255, 0.3);
+}
+.Footer--link:hover {
+    color: rgba(255, 255, 255, 0.5);
 }

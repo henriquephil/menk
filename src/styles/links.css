@@ -2,6 +2,7 @@ a, button {
     text-decoration: none;
     cursor: pointer;
 }
+
 a.default, button.default {
     background: transparent;
     color: #777;
