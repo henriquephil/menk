@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FlexView from 'react-flexview';
 import TitledPage from '../../../components/TitledPage';
 import PaperSection from '../../../components/PaperSection';
-import GenericCrudService from '../../../services/GenericCrudService';
+import DefaultCrudService from '../../../services/DefaultCrudService';
 import DateInput from '../../../components/DateInput';
 import InputMask from 'react-input-mask';
 
@@ -13,7 +13,7 @@ class Cliente extends Component {
         this.state = {
             ativo: true
         };
-        this.clienteService = new GenericCrudService('/cliente');
+        this.clienteService = new DefaultCrudService('/cliente');
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeTipo = this.handleChangeTipo.bind(this);
         this.salvar = this.salvar.bind(this);
@@ -24,7 +24,6 @@ class Cliente extends Component {
         if(id) {
             this.clienteService.get(id).then(res => {
                 const cliente = res.data;
-                console.log(cliente);
                 this.setState({
                     _id: cliente._id,
                     ativo: cliente.ativo,
@@ -102,7 +101,6 @@ class Cliente extends Component {
             },
             createdAt: this.state.createdAt
         };
-        console.log(cliente);
         this.clienteService.save(cliente).then(res => this.props.history.push('/cadastros/clientes'));
     }
 

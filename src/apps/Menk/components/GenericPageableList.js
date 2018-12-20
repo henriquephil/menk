@@ -41,7 +41,7 @@ class GenericPageableList extends Component {
     fetchPage(page, size) {
         this.setState({page: {}});
         this.service.fetchPage(page, size).then(res => {
-            this.setState({page: {data: res.data}});
+            this.setState({page: res.data});
         });
     }
 
@@ -50,7 +50,7 @@ class GenericPageableList extends Component {
             <div className="GenericPageableList">
                 <div className="GenericPageableList--table">
                     <Pagetable page={this.state.page} actions={this.props.recordActions} controls={this} pageSize={20}>
-                        {this.props.headers.map((th) => <th key={th.key} width={th.width} align={th.align}>{th.descricao}</th>)}
+                        {this.props.columns.map((th) => <th key={th.key} width={th.width} align={th.align}>{th.descricao}</th>)}
                     </Pagetable>
                 </div>
                 <div className="GenericPageableList--side">

@@ -16,8 +16,12 @@
 .Footer--capital {
     font-size: 32pt;
 }
+.Footer--git-icon {
+    margin-right: 10px;
+}
 .Footer--link, .Footer--link:visited {
     color: rgba(255, 255, 255, 0.3);
+    text-align: left;
 }
 .Footer--link:hover {
     color: rgba(255, 255, 255, 0.5);

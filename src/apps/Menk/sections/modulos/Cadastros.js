@@ -5,6 +5,8 @@ import Dashboard from './cadastros/Dashboard';
 import Clientes from './cadastros/Clientes';
 import Cliente from './cadastros/Cliente';
 import Produtos from './cadastros/Produtos';
+import EstoqueLocais from './cadastros/EstoqueLocais';
+import EstoqueLocal from './cadastros/EstoqueLocal';
 
 class Cadastros extends Component {
     render() {
@@ -13,6 +15,8 @@ class Cadastros extends Component {
             <Switch>
                 <Route path={`${this.props.match.path}/clientes`} component={Clientes}/>
                 <Route path={`${this.props.match.path}/cliente/:id?`} component={Cliente}/>
+                <Route path={`${this.props.match.path}/estoque-locais`} component={EstoqueLocais}/>
+                <Route path={`${this.props.match.path}/estoque-local/:id?`} component={EstoqueLocal}/>
                 <Route path={`${this.props.match.path}/produtos`} component={Produtos}/>
                 <Route path={`${this.props.match.path}`} component={Dashboard}/>
                 <Redirect to={`${this.props.match.path}`}/>

@@ -41,7 +41,6 @@ class QueryTextInput extends Component {
     }
 
     handleChangeKey(e) {
-        console.log(e.target.value);
         const val = isNaN(e.target.value) ? '' : e.target.value;
         this.change({
             id: val,

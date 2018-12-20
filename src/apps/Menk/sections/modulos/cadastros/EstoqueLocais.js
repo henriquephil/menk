@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
+import DefaultCrudService from '../../../services/DefaultCrudService';
 import TitledPage from '../../../components/TitledPage';
 import GenericPageableList from '../../../components/GenericPageableList';
 import pencil from 'resources/pencil.svg'
-import DefaultCrudService from '../../../services/DefaultCrudService';
 
-class Produtos extends Component {
+class EstoqueLocais extends Component {
     
     constructor(props) {
         super(props);
         this.edit = this.edit.bind(this);
-        this.produtoService = new DefaultCrudService('/produto');
+        this.service = new DefaultCrudService('/estoque-local');
         this.columns = [
             {
                 key: 'descricao',
                 descricao: 'Descrição',
                 align: 'left'
-            },
-            {
-                key: 'precoVenda',
-                descricao: 'Preço de venda',
-                align: 'right'
             }
         ];
         this.recordActions = [
@@ -32,19 +27,19 @@ class Produtos extends Component {
         ]
     }
 
-    edit(produto) {
-        this.props.history.push(`/cadastros/produto/${produto.id}`)
+    edit(cliente) {
+        this.props.history.push(`/cadastros/estoque-local/${cliente._id}`)
     }
 
     render() {
         return (
-            <TitledPage title="Produtos">
-                <GenericPageableList service={this.produtoService} recordActions={this.recordActions} columns={this.columns}>
-                    <Link to="/cadastros/produto" className="default primary">Novo</Link>
+            <TitledPage title="Locais de estoque">
+                <GenericPageableList service={this.service} recordActions={this.recordActions} columns={this.columns}>
+                    <Link to="/cadastros/estoque-local" className="default primary">Novo</Link>
                 </GenericPageableList>
             </TitledPage>
         );
     }
 }
 
-export default Produtos;
+export default EstoqueLocais;

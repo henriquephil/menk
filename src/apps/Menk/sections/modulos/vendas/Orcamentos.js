@@ -13,7 +13,7 @@ class Orcamentos extends Component {
         super(props);
         this.editOrcamento = this.editOrcamento.bind(this);
         this.orcamentoService = new OrcamentoService();
-        this.headers = [
+        this.columns = [
             {
                 key: 'id',
                 descricao: 'ID',
@@ -55,7 +55,7 @@ class Orcamentos extends Component {
     render() {
         return (
             <TitledPage title="Orçamentos">
-                <GenericPageableList service={this.orcamentoService} recordActions={this.recordActions} headers={this.headers}>
+                <GenericPageableList service={this.orcamentoService} recordActions={this.recordActions} columns={this.columns}>
                     <Link to="/vendas/orcamento" className="default primary">Novo</Link>
                 </GenericPageableList>
             </TitledPage>

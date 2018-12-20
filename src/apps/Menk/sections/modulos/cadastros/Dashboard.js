@@ -7,6 +7,7 @@ class Dashboard extends Component {
         const menuItens = [
             {to:'/cadastros/clientes', name: 'Clientes'},
             {to:'/cadastros/produtos', name: 'Produtos'},
+            {to:'/cadastros/estoque-locais', name: 'Locais de estoque'},
             {to:'/cadastros/fornecedores', name: 'Fornecedores'},
             {to:'/cadastros/formas-pagamento', name: 'Formas de pagamentos'},
             {to:'/cadastros/conta-bancaria', name: 'Conta bancária'}

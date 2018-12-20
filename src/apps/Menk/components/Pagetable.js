@@ -32,11 +32,11 @@ class Pagetable extends Component {
     }
 
     renderBody(page) {
-        if(!page || !page.data) {
+        if(!page || !page.content) {
             return this.renderNoData();
         }
-        const dataRows = page.data.map((record, index) => this.renderRow(record, index, this.props.children));
-        const emptyRows = [...Array(this.props.pageSize - page.data.length)].map((val, index) => <tr key={index} className="Pagetable--empty-row"><td colSpan={this.props.children.length}></td></tr>);
+        const dataRows = page.content.map((record, index) => this.renderRow(record, index, this.props.children));
+        const emptyRows = [...Array(this.props.pageSize - page.content.length)].map((val, index) => <tr key={index} className="Pagetable--empty-row"><td colSpan={this.props.children.length}></td></tr>);
         return [dataRows, emptyRows];
     }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import GenericCrudService from '../../../services/GenericCrudService';
+import DefaultCrudService from '../../../services/DefaultCrudService';
 import TitledPage from '../../../components/TitledPage';
 import GenericPageableList from '../../../components/GenericPageableList';
 import pencil from 'resources/pencil.svg'
@@ -10,8 +10,8 @@ class Clientes extends Component {
     constructor(props) {
         super(props);
         this.edit = this.edit.bind(this);
-        this.clienteService = new GenericCrudService('/cliente');
-        this.headers = [
+        this.clienteService = new DefaultCrudService('/cliente');
+        this.columns = [
             {
                 key: 'nome',
                 descricao: 'Nome',
@@ -34,7 +34,7 @@ class Clientes extends Component {
     render() {
         return (
             <TitledPage title="Clientes">
-                <GenericPageableList service={this.clienteService} recordActions={this.recordActions} headers={this.headers}>
+                <GenericPageableList service={this.clienteService} recordActions={this.recordActions} columns={this.columns}>
                     <Link to="/cadastros/cliente" className="default primary">Novo</Link>
                 </GenericPageableList>
             </TitledPage>

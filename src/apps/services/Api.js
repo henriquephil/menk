@@ -48,7 +48,17 @@ const axios = Axios.create({
         return data;
     })
 });
-const errorInterceptor = error => {
+
+const authorizationHeaderInterceptor = function(request) {
+    const authToken = localStorage.getItem("Authorization");
+    if (authToken) {
+        request.headers.authorization = authToken;
+    }
+    return request;
+}
+axios.interceptors.request.use(authorizationHeaderInterceptor, error => Promise.reject(error))
+
+const errorInterceptor = function(error) {
     // TODO notify snackbar
     console.log(error.response.data.message); 
 };

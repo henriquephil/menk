@@ -1,6 +1,6 @@
-import Api from "./Api";
+import Api from "../../services/Api";
 
-class GenericCrudService {
+class DefaultCrudService {
 
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
@@ -30,4 +30,4 @@ class GenericCrudService {
         return Api.get(`${this.baseUrl}/${id}`)
     }
 }
-export default GenericCrudService;
+export default DefaultCrudService;

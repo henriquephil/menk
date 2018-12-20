@@ -31,7 +31,6 @@ class OrcamentoForm extends Component {
             let change = {};
             change[field] = e.target.value;
             this.setState(change);
-            console.log(this.state);
         };
     }
 

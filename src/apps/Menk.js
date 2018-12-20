@@ -5,6 +5,7 @@ import Content from './Menk/sections/Content'
 import Footer from './Menk/sections/Footer';
 
 class Menk extends Component {
+
     render() {
       return (
         <div className="Menk">
