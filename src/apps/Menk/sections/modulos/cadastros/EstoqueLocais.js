@@ -27,8 +27,8 @@ class EstoqueLocais extends Component {
         ]
     }
 
-    edit(cliente) {
-        this.props.history.push(`/cadastros/estoque-local/${cliente._id}`)
+    edit(localEstoque) {
+        this.props.history.push(`/cadastros/estoque-local/${localEstoque.id}`)
     }
 
     render() {

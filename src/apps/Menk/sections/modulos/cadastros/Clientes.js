@@ -28,7 +28,7 @@ class Clientes extends Component {
     }
 
     edit(cliente) {
-        this.props.history.push(`/cadastros/cliente/${cliente._id}`)
+        this.props.history.push(`/cadastros/cliente/${cliente.id}`)
     }
 
     render() {

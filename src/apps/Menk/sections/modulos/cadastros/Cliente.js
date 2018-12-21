@@ -25,7 +25,7 @@ class Cliente extends Component {
             this.clienteService.get(id).then(res => {
                 const cliente = res.data;
                 this.setState({
-                    _id: cliente._id,
+                    id: cliente.id,
                     ativo: cliente.ativo,
                     nome: cliente.nome,
                     tipo: cliente.tipo,
@@ -78,7 +78,7 @@ class Cliente extends Component {
     
     salvar() {
         const cliente = {
-            _id: this.state._id,
+            id: this.state.id,
             ativo: this.state.ativo,
             nome: this.state.nome,
             tipo: this.state.tipo,

@@ -1,8 +1,6 @@
-import Api from "../services/Api";
+import Api from "./Api";
 
 class AuthService {
-    baseUrl = '/oauth/token';
-
     getAccessToken({username, password}) {
         const credentials = new URLSearchParams();
         credentials.append('client_id', 'client');
@@ -10,12 +8,15 @@ class AuthService {
         credentials.append('grant_type', 'password');
         credentials.append('username', username);
         credentials.append('password', password);
-        return Api.post(this.baseUrl, credentials)
+        return Api.post('/oauth/token', credentials)
                 .then(res => {
-                    localStorage.setItem("Authorization", `${res.data.token_type} ${res.data.access_token}`)
+                    localStorage.setItem("Authorization", `${res.data.token_type} ${res.data.access_token}`);
                     return res;
                 });
     }
 
+    removeToken() {
+        localStorage.removeItem("Authorization");
+    }
 }
 export default AuthService;

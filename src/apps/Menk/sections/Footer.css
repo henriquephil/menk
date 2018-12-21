@@ -26,3 +26,11 @@
 .Footer--link:hover {
     color: rgba(255, 255, 255, 0.5);
 }
+button {
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    color: #777;
+    border: none;
+    padding: 8px;
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Login.css';
 import FlexView from 'react-flexview/lib';
 import { withRouter } from "react-router-dom";
-import AuthService from '../services/AuthService';
+import AuthService from '../../services/AuthService';
 
 class Login extends Component {
     

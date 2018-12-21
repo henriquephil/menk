@@ -4,6 +4,7 @@ import './index.css';
 import './styles/table.css';
 import './styles/inputs.css';
 import './styles/links.css';
+import 'react-toggle/style.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

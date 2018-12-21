@@ -9,7 +9,7 @@ class Dashboard extends Component {
             {to:'/cadastros/produtos', name: 'Produtos'},
             {to:'/cadastros/estoque-locais', name: 'Locais de estoque'},
             {to:'/cadastros/fornecedores', name: 'Fornecedores'},
-            {to:'/cadastros/formas-pagamento', name: 'Formas de pagamentos'},
+            {to:'/cadastros/condicoes-pagamento', name: 'Condições de pagamento'},
             {to:'/cadastros/conta-bancaria', name: 'Conta bancária'}
         ];
         const reportItens = [

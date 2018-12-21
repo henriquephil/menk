@@ -8,9 +8,7 @@ class EstoqueLocal extends Component {
     
     constructor(props) {
         super(props);
-        this.state = {
-            descricao: ''
-        };
+        this.state = {};
         this.service = new DefaultCrudService('/estoque-local');
         this.handleChange = this.handleChange.bind(this);
         this.salvar = this.salvar.bind(this);

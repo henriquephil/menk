@@ -1,4 +1,4 @@
-import Api from "../../services/Api";
+import Api from "../../../services/Api";
 
 class DefaultCrudService {
 
@@ -15,8 +15,8 @@ class DefaultCrudService {
     }
 
     save(body) {
-        if (body._id) {
-            return this.put(body._id, body);
+        if (body.id) {
+            return this.put(body.id, body);
         } else {
             return this.post(body);
         }

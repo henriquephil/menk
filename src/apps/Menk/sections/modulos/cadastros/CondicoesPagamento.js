@@ -5,23 +5,23 @@ import GenericPageableList from '../../../components/GenericPageableList';
 import pencil from 'resources/pencil.svg'
 import DefaultCrudService from '../../../services/DefaultCrudService';
 
-class Produtos extends Component {
+class CondicoesPagamento extends Component {
     
     constructor(props) {
         super(props);
         this.edit = this.edit.bind(this);
-        this.produtoService = new DefaultCrudService('/produto');
+        this.service = new DefaultCrudService('/condicao-pagamento');
         this.columns = [
             {
                 key: 'descricao',
                 descricao: 'Descrição',
                 align: 'left'
             },
-            {
-                key: 'valorUnitario',
-                descricao: 'Preço de venda',
-                align: 'right'
-            }
+            // {
+            //     key: 'parcelas',
+            //     descricao: 'Quantidade de parcelas',
+            //     align: 'right'
+            // }
         ];
         this.recordActions = [
             {
@@ -32,19 +32,19 @@ class Produtos extends Component {
         ]
     }
 
-    edit(produto) {
-        this.props.history.push(`/cadastros/produto/${produto.id}`)
+    edit(condicaoPagamento) {
+        this.props.history.push(`/cadastros/condicao-pagamento/${condicaoPagamento.id}`)
     }
 
     render() {
         return (
-            <TitledPage title="Produtos">
-                <GenericPageableList service={this.produtoService} recordActions={this.recordActions} columns={this.columns}>
-                    <Link to="/cadastros/produto" className="default primary">Novo</Link>
+            <TitledPage title="Condições de pagamento">
+                <GenericPageableList service={this.service} recordActions={this.recordActions} columns={this.columns}>
+                    <Link to="/cadastros/condicao-pagamento" className="default primary">Novo</Link>
                 </GenericPageableList>
             </TitledPage>
         );
     }
 }
 
-export default Produtos;
+export default CondicoesPagamento;
