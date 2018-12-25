@@ -10,7 +10,7 @@ class Landing extends Component {
                 Landing
             </div>
             <div className="Landing--right">
-                <Login></Login>
+                <Login/>
             </div>
         </div>
       );

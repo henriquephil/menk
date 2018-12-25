@@ -2,7 +2,7 @@ import Api from "./Api";
 
 class AuthService {
     getAccessToken({username, password}) {
-        const credentials = new URLSearchParams();
+        const credentials = new FormData();
         credentials.append('client_id', 'client');
         credentials.append('client_secret', 'secret');
         credentials.append('grant_type', 'password');
@@ -13,10 +13,6 @@ class AuthService {
                     localStorage.setItem("Authorization", `${res.data.token_type} ${res.data.access_token}`);
                     return res;
                 });
-    }
-
-    removeToken() {
-        localStorage.removeItem("Authorization");
     }
 }
 export default AuthService;

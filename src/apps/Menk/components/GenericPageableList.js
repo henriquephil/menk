@@ -50,7 +50,9 @@ class GenericPageableList extends Component {
             <div className="GenericPageableList">
                 <div className="GenericPageableList--table">
                     <Pagetable page={this.state.page} actions={this.props.recordActions} controls={this} pageSize={20}>
-                        {this.props.columns.map((th) => <th key={th.key} width={th.width} align={th.align}>{th.descricao}</th>)}
+                        {this.props.columns.map((th) =>
+                            <th key={th.key} width={th.width} align={th.align} resolve={th.resolve || ''}>{th.descricao}</th>
+                        )}
                     </Pagetable>
                 </div>
                 <div className="GenericPageableList--side">

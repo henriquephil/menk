@@ -5,15 +5,14 @@ import GenericDashboard from '../../../components/GenericDashboard';
 class Dashboard extends Component {
     render() {
         const menuItens = [
-            {to:'/cadastros/clientes', name: 'Clientes'},
+            {to:'/cadastros/entidades', name: 'Entidades'},
             {to:'/cadastros/produtos', name: 'Produtos'},
             {to:'/cadastros/estoque-locais', name: 'Locais de estoque'},
-            {to:'/cadastros/fornecedores', name: 'Fornecedores'},
             {to:'/cadastros/condicoes-pagamento', name: 'Condições de pagamento'},
             {to:'/cadastros/conta-bancaria', name: 'Conta bancária'}
         ];
         const reportItens = [
-            {to:'/relatorio-cliente', name: 'Relatório de clientes'},
+            {to:'/relatorio-clientes', name: 'Relatório de clientes'},
             {to:'/relatorio-fornecedores', name: 'Relatório de fornecedores'}
         ];
         return (

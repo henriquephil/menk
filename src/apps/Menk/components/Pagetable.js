@@ -41,7 +41,7 @@ class Pagetable extends Component {
     }
 
     renderRow(record, rowIndex, children) {
-        const row = children.map((header, index) => <td key={index} style={this.tdStyle(header.props)}>{record[header.key]}</td>);
+        const row = children.map((header, index) => <td key={index} style={this.tdStyle(header.props)}>{header.props.resolve ? header.props.resolve(record) : record[header.key]}</td>);
 
         const actions = <td className="Pagetable--tableActions">{this.props.actions.map((action, index) => <img key={index} src={action.srcImg} alt={action.alt} onClick={() => action.onClick(record)}></img>)}</td>;
         return <tr key={rowIndex}>{row}{actions}</tr>;

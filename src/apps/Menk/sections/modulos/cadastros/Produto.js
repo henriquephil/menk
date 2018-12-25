@@ -49,7 +49,7 @@ class Produto extends Component {
                         </FlexView>
                         <FlexView shrink column hAlignContent='left' className="form-input">
                             <label>Ativo</label>
-                            <Toggle defaultChecked={this.state.ativo} onChange={this.handleChange('ativo')} />
+                            <Toggle defaultChecked={this.state.ativo} onChange={this.handleChange('ativo')}/>
                         </FlexView>
                     </FlexView>
                     <FlexView grow>
@@ -65,7 +65,7 @@ class Produto extends Component {
                             <label>Unidade de medida</label>
                             <input type="text" value={this.state.unidadeMedida || ''} onChange={this.handleChange('unidadeMedida')}/>
                         </FlexView>
-                        <FlexView grow />
+                        <FlexView grow/>
                         <FlexView basis="200" column hAlignContent='left' className="form-input">
                             <label>Valor unitário</label>
                             <input type="number" step=".01" value={this.state.valorUnitario || ''} onChange={this.handleChange('valorUnitario')}/>

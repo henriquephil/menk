@@ -43,7 +43,7 @@ class OrcamentoForm extends Component {
                             <label>Cliente</label>
                             <QueryTextInput display="nome"/>
                         </FlexView>
-                        <FlexView grow />
+                        <FlexView grow/>
                         <FlexView basis={200} column hAlignContent='left' className="form-input">
                             <label>Status</label>
                             <input type="text"/>
@@ -60,7 +60,7 @@ class OrcamentoForm extends Component {
                             <label>Cliente</label>
                             <input type="text"/>
                         </FlexView>
-                        <FlexView grow />
+                        <FlexView grow/>
                         <FlexView basis='20%' column hAlignContent='left' className="form-input">
                             <label>Status</label>
                             <input type="text"/>
@@ -77,7 +77,7 @@ class OrcamentoForm extends Component {
                             <label>Cliente</label>
                             <input type="text"/>
                         </FlexView>
-                        <FlexView grow />
+                        <FlexView grow/>
                         <FlexView grow={2} column hAlignContent='left' className="form-input">
                             <label>Status</label>
                             <input type="text"/>

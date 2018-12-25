@@ -16,12 +16,7 @@ class CondicoesPagamento extends Component {
                 key: 'descricao',
                 descricao: 'Descrição',
                 align: 'left'
-            },
-            // {
-            //     key: 'parcelas',
-            //     descricao: 'Quantidade de parcelas',
-            //     align: 'right'
-            // }
+            }
         ];
         this.recordActions = [
             {

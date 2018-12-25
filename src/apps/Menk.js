@@ -9,9 +9,9 @@ class Menk extends Component {
     render() {
       return (
         <div className="Menk">
-            <Menu></Menu>
-            <Content location={this.props.location}></Content>
-            <Footer></Footer>
+            <Menu/>
+            <Content location={this.props.location}/>
+            <Footer/>
         </div>
       );
     }

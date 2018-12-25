@@ -5,17 +5,24 @@ import TitledPage from '../../../components/TitledPage';
 import GenericPageableList from '../../../components/GenericPageableList';
 import pencil from 'resources/pencil.svg'
 
-class Clientes extends Component {
+class Entidades extends Component {
     
     constructor(props) {
         super(props);
         this.edit = this.edit.bind(this);
-        this.clienteService = new DefaultCrudService('/cliente');
+        this.service = new DefaultCrudService('/entidade');
         this.columns = [
             {
                 key: 'nome',
                 descricao: 'Nome',
-                align: 'left'
+                align: 'left',
+                resolve: (entidade) => {
+                    switch (entidade.tipoPessoa) {
+                        case 'FISICA': return entidade.dadosPessoa.nome;
+                        case 'JURIDICA': return entidade.dadosPessoa.nomeFantasia;
+                        default: return '';
+                    } 
+                }
             }
         ];
         this.recordActions = [
@@ -27,19 +34,19 @@ class Clientes extends Component {
         ]
     }
 
-    edit(cliente) {
-        this.props.history.push(`/cadastros/cliente/${cliente.id}`)
+    edit(entidade) {
+        this.props.history.push(`/cadastros/entidade/${entidade.id}`)
     }
 
     render() {
         return (
-            <TitledPage title="Clientes">
-                <GenericPageableList service={this.clienteService} recordActions={this.recordActions} columns={this.columns}>
-                    <Link to="/cadastros/cliente" className="default primary">Novo</Link>
+            <TitledPage title="Entidades">
+                <GenericPageableList service={this.service} recordActions={this.recordActions} columns={this.columns}>
+                    <Link to="/cadastros/entidade" className="default primary">Novo</Link>
                 </GenericPageableList>
             </TitledPage>
         );
     }
 }
 
-export default Clientes;
+export default Entidades;

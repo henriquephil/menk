@@ -4,20 +4,18 @@ import { withRouter } from "react-router-dom";
 import './Footer.css';
 import Container from '../../../components/Container/Container';
 import Icon from 'react-simple-icons'
-import AuthService from '../../../services/AuthService';
 import TokenService from '../../../services/TokenService';
 
 class Footer extends Component {
 
     constructor(props) {
         super(props);
-        this.authService = new AuthService();
         this.tokenService = new TokenService();
         this.logout = this.logout.bind(this);
     }
 
     logout() {
-        this.authService.removeToken();
+        localStorage.removeItem("Authorization");
         this.props.history.push("/landing");
     }
 

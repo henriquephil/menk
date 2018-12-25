@@ -41,7 +41,7 @@ function convertDateStringsToDates(input) {
     return null;
 }
 
-const axios = Axios.create({
+const Api = Axios.create({
     baseURL: process.env.REACT_APP_BACKEND,
     transformResponse: Axios.defaults.transformResponse.concat((data) => {
         convertDateStringsToDates(data);
@@ -49,18 +49,28 @@ const axios = Axios.create({
     })
 });
 
-const authorizationHeaderInterceptor = function(request) {
+const requestFulfilledInterceptor = function(request) {
     const authToken = localStorage.getItem("Authorization");
     if (authToken) {
         request.headers.authorization = authToken;
     }
     return request;
 }
-axios.interceptors.request.use(authorizationHeaderInterceptor, error => Promise.reject(error))
-
-const errorInterceptor = function(error) {
-    // TODO notify snackbar
-    console.log(error.response.data.message); 
+const requestErrorInterceptor = function(error) {
+    return Promise.reject(error);
+}
+const responseFulfilledInterceptor = function(request) {
+    return request;
+}
+const responseErrorInterceptor = function(error) {
+    // TODO Feedback
+    console.log(error.message, error.response);
+    if (error.response.status === 401) {
+        localStorage.removeItem("Authorization");
+        window.location.replace('/');
+    }
+    return Promise.reject(error);
 };
-axios.interceptors.response.use(null, errorInterceptor)
-export default axios;
+Api.interceptors.request.use(requestFulfilledInterceptor, requestErrorInterceptor);
+Api.interceptors.response.use(responseFulfilledInterceptor, responseErrorInterceptor)
+export default Api;

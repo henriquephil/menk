@@ -73,7 +73,7 @@ class QueryTextInput extends Component {
                 <FlexView grow>
                     <input value={this.state.display} className="QueryTextInput--description" readOnly tabIndex="-1"/>
                 </FlexView>
-                <QuickQueryDialog placeholder="Nome" displayAttribute="nome" onSelect={this.dialogReturn} visible={this.state.showDialog} hideMe={this.hideDialog}></QuickQueryDialog>
+                <QuickQueryDialog placeholder="Nome" displayAttribute="nome" onSelect={this.dialogReturn} visible={this.state.showDialog} hideMe={this.hideDialog}/>
             </FlexView>
         );
     }

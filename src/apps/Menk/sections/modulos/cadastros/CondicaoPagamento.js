@@ -4,6 +4,7 @@ import FlexView from 'react-flexview';
 import TitledPage from '../../../components/TitledPage';
 import PaperSection from '../../../components/PaperSection';
 import DefaultCrudService from '../../../services/DefaultCrudService';
+import CondicaoPagamentoParcela from './CondicaoPagamentoParcela';
 
 class CondicaoPagamento extends Component {
     
@@ -14,8 +15,10 @@ class CondicaoPagamento extends Component {
         };
         this.service = new DefaultCrudService('/condicao-pagamento');
         this.handleChange = this.handleChange.bind(this);
-        this.salvar = this.salvar.bind(this);
+        this.handleParcelaChange = this.handleParcelaChange.bind(this);
         this.adicionarParcela = this.adicionarParcela.bind(this);
+        this.removeParcela = this.removeParcela.bind(this);
+        this.salvar = this.salvar.bind(this);
     }
 
     componentDidMount() {
@@ -24,6 +27,8 @@ class CondicaoPagamento extends Component {
             this.service.get(id).then(res => {
                 this.setState(res.data);
             })
+        } else {
+            this.adicionarParcela();
         }
     }
 
@@ -35,31 +40,35 @@ class CondicaoPagamento extends Component {
         };
     }
 
-    handleParcelaChange(index, field) {
-        return (e) => {
-            let change = {};
-            change[field] = {$set: e.target.value};
-            const val = {};
-            val[index] = {$set: update(this.state.parcelas[index], change)};
-            this.setState({
-                parcelas: update(this.state.parcelas, val)
-            });
-        };
-    }
-
-    salvar() {
-        this.service.save(this.state).then(res => this.props.history.push('/cadastros/condicoes-pagamento'));
-    }
-
-    adicionarParcela() {
-        const newParcela = {dias: 0, fracao: 0};
+    handleParcelaChange(index, parcela) {
+        console.log(index, parcela);
+        const change = {};
+        change[index] = {$set: parcela};
         this.setState({
-            parcelas: update(this.state.parcelas, {$push: [newParcela]})
+            parcelas: update(this.state.parcelas, change)
         });
     }
 
+    adicionarParcela() {
+        this.setState({
+            parcelas: update(this.state.parcelas, {$push: [{dias: 0, fracao: 0}]})
+        });
+    }
+
+    removeParcela(index) {
+        this.setState({
+            parcelas: update(this.state.parcelas, {$splice: [[index, 1]]})
+        });
+    }
+
+    salvar() {
+        if (!this.state.descricao) {
+            return;
+        }
+        this.service.save(this.state).then(res => this.props.history.push('/cadastros/condicoes-pagamento'));
+    }
+
     render() {
-        console.log(this.state);
         return (
             <TitledPage title={this.props.match.params.id ? "Editando condição de pagamento" : "Nova condição de pagamento"}>
                 <PaperSection>
@@ -73,9 +82,11 @@ class CondicaoPagamento extends Component {
                 <PaperSection title="Parcelas">
                     <FlexView grow>
                         <FlexView shrink column hAlignContent='left' className="form-input">
-                            {this.state.parcelas.map((parcela, index) => this.renderParcela(parcela, index))}
+                            {this.state.parcelas.map((parcela, index) => 
+                                <CondicaoPagamentoParcela key={index} index={index} value={parcela} onChange={this.handleParcelaChange} onRemove={this.removeParcela}/>
+                            )}
                             <FlexView>
-                                <button onClick={this.adicionarParcela}>Adicionar parcela</button>
+                                <button onClick={this.adicionarParcela} className="default">Adicionar parcela</button>
                             </FlexView>
                         </FlexView>
                     </FlexView>
@@ -88,24 +99,6 @@ class CondicaoPagamento extends Component {
                     </FlexView>
                 </PaperSection>
             </TitledPage>
-        );
-    }
-
-    renderParcela(parcela, index) {
-        return (
-            <FlexView>
-                <FlexView shrink column hAlignContent='left' className="form-input">
-                    <span className="CondicaoPagamento--parcela-index">#{index + 1}</span>
-                </FlexView>
-                <FlexView basis="100" column hAlignContent='left' className="form-input">
-                    <label>Dias</label>
-                    <input type="number" step="1" value={this.state.parcelas[index].dias || ''} onChange={this.handleParcelaChange(index, 'dias')}/>
-                </FlexView>
-                <FlexView basis="100" column hAlignContent='left' className="form-input">
-                    <label>Fração</label>
-                    <input type="number" step=".01" min="0" max="1" value={this.state.parcelas[index].fracao || ''} onChange={this.handleParcelaChange(index, 'fracao')}/>
-                </FlexView>
-            </FlexView>
         );
     }
 }
